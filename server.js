@@ -21,11 +21,11 @@ console.log({
 });
 
 const pool = mysql.createPool({
-  host: '153.92.15.54',
+  host:process.env.DB_HOST,
   port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
-  user: 'u912091910_widi',
-  password: 'Hanyawidi390',
-  database: 'u912091910_iseeyou',
+  user:  process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
