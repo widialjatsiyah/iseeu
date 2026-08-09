@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
@@ -10,6 +11,14 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json({ limit: '20mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+console.log({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  passwordLoaded: Boolean(process.env.DB_PASSWORD),
+  passwordLength: process.env.DB_PASSWORD?.length,
+});
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
