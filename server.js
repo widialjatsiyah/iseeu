@@ -21,7 +21,7 @@ console.log({
 });
 
 const pool = mysql.createPool({
-  host: '127.0.0.1',
+  host: '153.92.15.54',
   port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
   user: 'u912091910_widi',
   password: 'Hanyawidi390',
